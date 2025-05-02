@@ -1,10 +1,10 @@
 
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { destinations, Destination } from '@/data/destinations';
+import { destinations, Destination, Eatery, ScenicSpot } from '@/data/destinations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { MapPin, Landmark, History, BookOpen } from 'lucide-react'; // Added relevant icons
+import { MapPin, Landmark, History, BookOpen, Utensils, Beer, Coffee, Cake, Pizza } from 'lucide-react'; // Added Utensils and specific eatery icons
 
 interface DestinationPageProps {
   params: {
@@ -23,6 +23,37 @@ export async function generateStaticParams() {
 function getDestinationBySlug(slug: string): Destination | undefined {
   return destinations.find((dest) => dest.slug === slug);
 }
+
+// Helper function to get an icon based on eatery type
+function getEateryIcon(type: string) {
+  switch (type.toLowerCase()) {
+    case 'restaurant': return <Utensils className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />;
+    case 'cafe': return <Coffee className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />;
+    case 'bar': return <Beer className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />;
+    case 'bakery':
+    case 'patisserie':
+    case 'gelateria':
+    case 'ice cream parlor':
+    case 'churreria':
+    case 'confectionery': return <Cake className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />;
+    case 'pizzeria': return <Pizza className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />;
+    case 'street food':
+    case 'market':
+    case 'food hall':
+    case 'hawker centre':
+    case 'food court':
+    case 'takeaway':
+    case 'deli':
+    case 'sandwich shop':
+    case 'hot dog stand':
+    case 'imbiss':
+    case 'chippy':
+    case 'snack bar': return <Utensils className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />; // Re-use Utensils for various food stalls
+    case 'winery': return <Beer className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />; // Re-use Beer for Winery
+    default: return <Utensils className="mr-2 h-5 w-5 text-amber-600 flex-shrink-0" />; // Default icon
+  }
+}
+
 
 export default function DestinationPage({ params }: DestinationPageProps) {
   const destination = getDestinationBySlug(params.slug);
@@ -79,7 +110,7 @@ export default function DestinationPage({ params }: DestinationPageProps) {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              {destination.scenicSpots.map((spot, index) => (
+              {destination.scenicSpots.map((spot: ScenicSpot, index: number) => (
                 <div key={index}>
                   <h3 className="font-semibold text-lg">{spot.name}</h3>
                   <p className="text-muted-foreground">{spot.description}</p>
@@ -88,6 +119,32 @@ export default function DestinationPage({ params }: DestinationPageProps) {
               ))}
             </CardContent>
           </Card>
+
+          {/* Popular Eateries Section */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center text-2xl">
+                <Utensils className="mr-2 h-6 w-6 text-primary" /> {/* Changed Icon */}
+                Popular Eateries
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {destination.popularEateries.map((eatery: Eatery, index: number) => (
+                <div key={index}>
+                  <div className="flex items-start">
+                    {getEateryIcon(eatery.type)}
+                    <div>
+                        <h3 className="font-semibold text-lg">{eatery.name}</h3>
+                        <p className="text-sm text-muted-foreground italic mb-1">{eatery.type}</p>
+                        <p className="text-muted-foreground">{eatery.description}</p>
+                    </div>
+                   </div>
+                  {index < destination.popularEateries.length - 1 && <Separator className="my-4" />}
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
 
            {/* Articles Section (Placeholder) */}
            <Card>

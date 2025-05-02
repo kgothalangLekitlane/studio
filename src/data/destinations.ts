@@ -4,6 +4,12 @@ export interface ScenicSpot {
   description: string;
 }
 
+export interface Eatery {
+    name: string;
+    description: string; // e.g., "Famous for traditional Parisian bistro fare" or "Trendy spot for modern Japanese cuisine"
+    type: string; // e.g., "Restaurant", "Cafe", "Street Food", "Bakery"
+}
+
 export interface Destination {
   slug: string; // Unique identifier for URL
   name: string;
@@ -16,6 +22,7 @@ export interface Destination {
   coordinates: string; // Example: "48.8566° N, 2.3522° E"
   population: string; // Example: "2.1 million (city)"
   scenicSpots: ScenicSpot[];
+  popularEateries: Eatery[]; // Added field for eateries
   articleIdeas: string[]; // Placeholder titles/ideas for articles
 }
 
@@ -40,6 +47,13 @@ The 19th century saw massive urban renewal under Baron Haussmann, creating the w
       { name: "Notre Dame Cathedral", description: "A masterpiece of French Gothic architecture (currently under restoration)." },
       { name: "Montmartre & Sacré-Cœur", description: "Artistic neighborhood with hilltop basilica offering panoramic views." },
       { name: "Seine River Cruise", description: "A relaxing way to see many landmarks from the water." },
+    ],
+    popularEateries: [
+        { name: "Le Bouillon Chartier", description: "Historic, bustling brasserie known for traditional French food at affordable prices.", type: "Restaurant"},
+        { name: "L'As du Fallafel", description: "Legendary spot in Le Marais for delicious and filling falafel sandwiches.", type: "Street Food"},
+        { name: "Angelina", description: "Elegant tea room famous for its rich hot chocolate and Mont-Blanc pastry.", type: "Cafe / Patisserie"},
+        { name: "Pierre Hermé", description: "Renowned pastry chef known for exquisite macarons and innovative pastries.", type: "Patisserie"},
+        { name: "Breizh Café", description: "Popular crêperie offering sweet and savory Breton galettes.", type: "Restaurant / Crêperie"},
     ],
     articleIdeas: [
       "A Perfect Weekend in Paris: Itinerary & Tips",
@@ -68,6 +82,13 @@ Post-war reconstruction fueled rapid economic growth, leading to the Tokyo we kn
       { name: "Tokyo Skytree", description: "Modern communications tower with observation decks offering stunning views." },
       { name: "Meiji Jingu Shrine", description: "Peaceful oasis dedicated to Emperor Meiji and Empress Shoken." },
       { name: "Harajuku", description: "Center of youth culture, fashion, and unique street style." },
+    ],
+     popularEateries: [
+        { name: "Ichiran Ramen", description: "Famous ramen chain allowing customization in individual booths.", type: "Restaurant"},
+        { name: "Tsukiji Outer Market", description: "Bustling market with countless stalls selling fresh seafood, snacks, and sushi.", type: "Market / Street Food"},
+        { name: "Sukiyabashi Jiro", description: "Legendary (and exclusive) sushi restaurant featured in 'Jiro Dreams of Sushi'.", type: "Restaurant"},
+        { name: "Afuri Ramen", description: "Known for its light, yuzu-infused ramen broth.", type: "Restaurant"},
+        { name: "Harajuku Gyoza Lou", description: "Popular spot specializing in delicious and affordable gyoza (dumplings).", type: "Restaurant"},
     ],
     articleIdeas: [
       "Navigating Tokyo: A Guide to Public Transport",
@@ -98,6 +119,13 @@ Rome became the capital of a unified Italy in 1871. Today, it's a vibrant modern
       { name: "Vatican City (St. Peter's Basilica & Museums)", description: "The independent city-state, center of the Catholic Church." },
       { name: "Trevi Fountain", description: "Magnificent Baroque fountain; toss a coin to ensure your return!" },
     ],
+    popularEateries: [
+        { name: "Roscioli Salumeria con Cucina", description: "Renowned deli and restaurant known for pasta dishes like Carbonara and Amatriciana.", type: "Restaurant / Deli"},
+        { name: "Pizzarium Bonci", description: "Famous spot for pizza al taglio (pizza by the slice) with creative toppings.", type: "Pizzeria / Street Food"},
+        { name: "Trattoria Da Enzo al 29", description: "Popular Trastevere eatery serving classic Roman dishes in a traditional setting.", type: "Restaurant"},
+        { name: "Giolitti", description: "Historic gelateria near the Pantheon, offering a wide variety of gelato flavors.", type: "Gelateria"},
+        { name: "Trapizzino", description: "Street food invention - pizza dough pockets filled with Roman stews and sauces.", type: "Street Food"},
+    ],
     articleIdeas: [
       "Rome in 3 Days: Seeing the Highlights",
       "Ancient Rome for Beginners: Understanding the Forum and Colosseum",
@@ -125,6 +153,13 @@ Crucially, the Spanish conquistadors never found Machu Picchu. It remained hidde
       { name: "Huayna Picchu Mountain", description: "The iconic peak behind the citadel (requires separate ticket and climb)." },
       { name: "Inca Bridge", description: "A precarious trail bridge built into the cliffside." },
       { name: "Sun Gate (Inti Punku)", description: "The original entrance for those arriving via the Inca Trail, offering panoramic views." },
+    ],
+    popularEateries: [
+        { name: "Inkaterra Machu Picchu Pueblo Hotel Restaurant", description: "Upscale dining experience within the Inkaterra hotel, focusing on Andean cuisine.", type: "Restaurant"},
+        { name: "The Tree House Restaurant", description: "Restaurant in Aguas Calientes known for Peruvian fusion dishes and atmosphere.", type: "Restaurant"},
+        { name: "Indio Feliz Restaurant Bistro", description: "Popular choice in Aguas Calientes offering Peruvian and international food in a quirky setting.", type: "Restaurant"},
+        { name: "Sanctuary Lodge, A Belmond Hotel Restaurant", description: "Only hotel at the entrance to Machu Picchu, offering convenient (but pricey) dining.", type: "Restaurant"},
+        { name: "Mapacho Craft Beer & Restaurant", description: "Place in Aguas Calientes for craft beer and Peruvian dishes.", type: "Restaurant / Bar"},
     ],
     articleIdeas: [
       "Planning Your Trip to Machu Picchu: Tickets, Trains, and Tips",
@@ -154,6 +189,13 @@ While Tokyo became the political capital during the Edo period and the official 
       { name: "Gion District", description: "Kyoto's traditional geisha district with preserved wooden machiya houses." },
       { name: "Kiyomizu-dera Temple", description: "Known for its wooden stage offering panoramic views of the city." },
     ],
+    popularEateries: [
+        { name: "Honke Owariya", description: "Historic restaurant specializing in soba noodles, dating back centuries.", type: "Restaurant"},
+        { name: "Nishiki Market", description: "Narrow market street ('Kyoto's Kitchen') filled with vendors selling local delicacies, produce, and kitchenware.", type: "Market / Street Food"},
+        { name: "Kikunoi Roan", description: "Michelin-starred restaurant offering exquisite Kaiseki (multi-course) dining.", type: "Restaurant"},
+        { name: "Menbaka Fire Ramen", description: "Unique ramen experience where chefs ignite oil over the bowls.", type: "Restaurant"},
+        { name: "Gion Karyo", description: "Elegant restaurant in Gion serving refined Kyoto-style cuisine.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Kyoto's Temple Trail: Must-Visit Shrines and Temples",
       "Experiencing a Traditional Tea Ceremony in Kyoto",
@@ -181,6 +223,13 @@ Throughout its history, Santorini's inhabitants adapted to the volcanic landscap
       { name: "Akrotiri Archaeological Site", description: "The remarkably preserved Minoan Bronze Age settlement." },
       { name: "Red Beach & Black Beach (Perissa/Kamari)", description: "Unique volcanic sand beaches." },
       { name: "Caldera Boat Tour", description: "Explore the volcanic crater, hot springs, and nearby islands." },
+    ],
+    popularEateries: [
+        { name: "Metaxi Mas", description: "Highly-rated taverna (in Exo Gonia) known for traditional Santorinian and Cretan dishes.", type: "Restaurant"},
+        { name: "Ammoudi Fish Tavern", description: "Seafood restaurant located in Ammoudi Bay below Oia, offering fresh fish by the water.", type: "Restaurant"},
+        { name: "Lucky's Souvlakis", description: "Popular spot in Fira for quick, delicious, and affordable gyros and souvlaki.", type: "Street Food"},
+        { name: "Santo Wines Winery", description: "Winery offering wine tasting with stunning caldera views and light bites.", type: "Winery / Cafe"},
+        { name: "To Psaraki", description: "Well-regarded seafood restaurant in Vlychada known for its fresh catches.", type: "Restaurant"},
     ],
     articleIdeas: [
       "Santorini Sunsets: Best Viewing Spots in Oia and Beyond",
@@ -211,6 +260,13 @@ Despite colonization and modernization, Balinese culture remains vibrant, eviden
       { name: "Tanah Lot Temple", description: "Picturesque sea temple perched on a rock formation, best viewed at sunset." },
       { name: "Seminyak & Kuta Beaches", description: "Popular coastal areas known for surfing, sunsets, beach clubs, and nightlife." },
     ],
+    popularEateries: [
+        { name: "Locavore", description: "Highly acclaimed Ubud restaurant offering modern European cuisine with local ingredients (often requires booking).", type: "Restaurant"},
+        { name: "Warung Babi Guling Ibu Oka", description: "Famous eatery in Ubud specializing in Balinese roasted suckling pig.", type: "Warung (Restaurant)"},
+        { name: "La Favela", description: "Unique bar and restaurant in Seminyak with eclectic, jungle-like decor.", type: "Restaurant / Bar"},
+        { name: "Naughty Nuri's Warung", description: "Known for its delicious BBQ pork ribs and martinis (original location near Ubud).", type: "Warung (Restaurant)"},
+        { name: "Crate Cafe", description: "Popular brunch spot in Canggu known for healthy, photogenic dishes.", type: "Cafe"},
+    ],
     articleIdeas: [
       "Finding Your Zen in Ubud: Yoga Retreats and Spiritual Experiences",
       "Bali's Best Beaches: From Surfing Hotspots to Hidden Coves",
@@ -240,6 +296,13 @@ Today, Norway is known for its stunning natural beauty, commitment to environmen
       { name: "Pulpit Rock (Preikestolen)", description: "Iconic cliff formation offering stunning views over Lysefjord (challenging hike)." },
       { name: "Tromsø", description: "Major city above the Arctic Circle, ideal for Northern Lights viewing and Arctic activities." },
     ],
+    popularEateries: [
+        { name: "Maaemo", description: "Michelin 3-star restaurant in Oslo offering a unique, nature-inspired Norwegian tasting menu.", type: "Restaurant"},
+        { name: "Fisketorget", description: "Famous fish market in Bergen with seafood stalls and restaurants.", type: "Market / Restaurant"},
+        { name: "Pingvinen", description: "Cozy Bergen pub serving traditional Norwegian home cooking.", type: "Restaurant / Bar"},
+        { name: "Bare Vestland", description: "Bergen restaurant focusing on modern interpretations of Western Norwegian cuisine.", type: "Restaurant"},
+        { name: "Tim Wendelboe", description: "World-renowned coffee shop and roastery in Oslo.", type: "Cafe"},
+    ],
     articleIdeas: [
       "Driving Norway's Scenic Routes: Tips for an Epic Road Trip",
       "Chasing the Northern Lights in Arctic Norway",
@@ -267,6 +330,13 @@ The city grew upwards with the advent of skyscrapers like the Empire State Build
       { name: "Empire State Building/Top of the Rock", description: "Observation decks providing panoramic city views." },
       { name: "Metropolitan Museum of Art", description: "World-renowned museum housing vast collections spanning global history." },
     ],
+     popularEateries: [
+        { name: "Katz's Delicatessen", description: "Legendary Jewish deli famous for its pastrami sandwiches.", type: "Deli / Restaurant"},
+        { name: "Joe's Pizza", description: "Classic NYC slice joint, considered one of the best.", type: "Pizzeria / Street Food"},
+        { name: "Peter Luger Steak House", description: "Historic Brooklyn steakhouse known for its porterhouse.", type: "Restaurant"},
+        { name: "Shake Shack", description: "Popular chain started in Madison Square Park, known for burgers and shakes.", type: "Fast Food / Restaurant"},
+        { name: "Levain Bakery", description: "Famous for its enormous, gooey chocolate chip cookies.", type: "Bakery"},
+    ],
     articleIdeas: [
       "First Timer's Guide to NYC: Navigating the Boroughs",
       "Broadway Bound: How to Get Tickets and What to See",
@@ -293,6 +363,13 @@ The city suffered heavily during the Blitz in World War II but was rebuilt and c
       { name: "Buckingham Palace", description: "Official residence of the monarch, witness the Changing of the Guard." },
       { name: "British Museum", description: "Vast collection of world art and artifacts, including the Rosetta Stone." },
       { name: "London Eye", description: "Giant Ferris wheel offering panoramic views over the city." },
+    ],
+    popularEateries: [
+        { name: "Dishoom", description: "Popular restaurants paying homage to Irani cafes of Bombay, serving delicious Indian food.", type: "Restaurant"},
+        { name: "Borough Market", description: "Historic food market offering a huge variety of street food, produce, and gourmet goods.", type: "Market / Street Food"},
+        { name: "Sketch (The Gallery)", description: "Iconic, quirky venue famous for its pink afternoon tea room.", type: "Restaurant / Cafe"},
+        { name: "The Ledbury", description: "Michelin-starred restaurant in Notting Hill known for modern European cuisine.", type: "Restaurant"},
+        { name: "Poppies Fish & Chips", description: "Retro-style chippy serving classic British fish and chips.", type: "Restaurant / Takeaway"},
     ],
     articleIdeas: [
       "A Royal Tour of London: Palaces, Parks, and Pageantry",
@@ -322,6 +399,13 @@ Today, Cairo is the largest city in Africa and the Arab world, a sprawling metro
       { name: "Citadel of Saladin & Mosques", description: "Historic Islamic fortress complex with stunning mosques like Muhammad Ali Mosque." },
       { name: "Nile River Cruise/Felucca Ride", description: "Experience the lifeblood of Egypt with views of the city skyline." },
     ],
+    popularEateries: [
+        { name: "Abou El Sid", description: "Elegant restaurant in Zamalek offering traditional Egyptian cuisine in an opulent setting.", type: "Restaurant"},
+        { name: "Fasahet Somaya", description: "Very local, popular spot known for authentic, hearty Egyptian dishes like molokhia and fattah.", type: "Restaurant"},
+        { name: "Kazaz Restaurant", description: "Well-regarded restaurant serving classic Egyptian grills and mezzes.", type: "Restaurant"},
+        { name: "Zooba", description: "Modern eatery putting a contemporary twist on Egyptian street food staples like koshary and taameya.", type: "Restaurant / Street Food"},
+        { name: "El Fishawy Cafe", description: "Historic cafe in Khan el-Khalili, famous for its atmosphere and traditional drinks.", type: "Cafe"},
+    ],
     articleIdeas: [
       "Decoding the Pyramids: History and Mysteries",
       "Navigating Cairo's Bustle: Transport and Safety Tips",
@@ -348,6 +432,13 @@ Rio became known for its glamorous lifestyle, iconic beaches like Copacabana and
       { name: "Copacabana & Ipanema Beaches", description: "World-famous beaches known for their vibrant atmosphere and scenery." },
       { name: "Selarón Steps (Escadaria Selarón)", description: "Colorful mosaic staircase, a vibrant work of public art." },
       { name: "Tijuca National Park", description: "Vast urban rainforest offering hiking trails and waterfalls." },
+    ],
+    popularEateries: [
+        { name: "Confeitaria Colombo", description: "Historic, grand cafe in Centro known for pastries, coffee, and elegant atmosphere.", type: "Cafe"},
+        { name: "Marius Degustare", description: "Eccentric, upscale churrascaria (steakhouse) and seafood restaurant with pirate-themed decor.", type: "Restaurant"},
+        { name: "Aprazível", description: "Restaurant in Santa Teresa offering Brazilian cuisine with stunning city views in a rustic-chic setting.", type: "Restaurant"},
+        { name: "Bar Urca", description: "Casual spot by the water in Urca, famous for empadas (savory pies) and cold beer with views of Sugarloaf.", type: "Bar / Restaurant"},
+        { name: "Tacacá do Norte", description: "Simple eatery serving authentic Amazonian dishes like tacacá soup.", type: "Restaurant"},
     ],
     articleIdeas: [
       "Experiencing Carnival in Rio: Tips and Highlights",
@@ -376,6 +467,13 @@ Key developments include the opening of the Sydney Harbour Bridge in 1932 and th
       { name: "The Rocks", description: "Historic area with cobblestone streets, pubs, and markets." },
       { name: "Taronga Zoo", description: "Zoo with spectacular harbour views and diverse animal collections." },
     ],
+     popularEateries: [
+        { name: "Quay", description: "Fine dining restaurant in The Rocks with stunning harbour views and innovative Australian cuisine.", type: "Restaurant"},
+        { name: "Mr. Wong", description: "Popular, stylish restaurant serving Cantonese cuisine in a large, atmospheric setting.", type: "Restaurant"},
+        { name: "Bourke Street Bakery", description: "Beloved local bakery known for sausage rolls, meat pies, pastries, and bread.", type: "Bakery / Cafe"},
+        { name: "Sydney Fish Market", description: "Bustling market with wholesale and retail seafood, plus cafes and restaurants.", type: "Market / Restaurant"},
+        { name: "Icebergs Dining Room and Bar", description: "Iconic Bondi restaurant offering Italian food with panoramic ocean views over the Icebergs pool.", type: "Restaurant / Bar"},
+    ],
     articleIdeas: [
       "Sydney Harbour Experiences: Ferries, Cruises, and BridgeClimb",
       "Exploring Sydney's Beaches: Bondi, Manly, and Beyond",
@@ -402,6 +500,13 @@ During the 20th century, South Africa implemented apartheid, and Cape Town becam
       { name: "V&A Waterfront", description: "Vibrant harbour area with shops, restaurants, and entertainment." },
       { name: "Cape Point & Cape of Good Hope", description: "Dramatic peninsula scenery within Table Mountain National Park." },
       { name: "Kirstenbosch Botanical Gardens", description: "World-renowned gardens showcasing diverse South African flora." },
+    ],
+    popularEateries: [
+        { name: "The Test Kitchen", description: "Internationally acclaimed restaurant (often needs advance booking) offering creative fine dining.", type: "Restaurant"},
+        { name: "La Colombe", description: "Elegant fine dining restaurant located on Silvermist wine estate, known for classic cuisine with a modern twist.", type: "Restaurant"},
+        { name: "Kalky's", description: "Casual, popular spot in Kalk Bay harbour for fresh, simple fish and chips.", type: "Restaurant / Takeaway"},
+        { name: "Gold Restaurant", description: "Offers a unique African dining experience with drumming, dancing, and cuisine from across the continent.", type: "Restaurant"},
+        { name: "Truth Coffee Roasting", description: "Steampunk-themed cafe renowned for its excellent coffee and brunch.", type: "Cafe"},
     ],
     articleIdeas: [
       "Exploring the Cape Peninsula: A Scenic Drive Guide",
@@ -430,6 +535,13 @@ The city continued to grow throughout the 20th century, becoming the political, 
       { name: "Chatuchak Weekend Market", description: "Vast market offering everything from clothing to antiques and street food." },
       { name: "Chao Phraya River Cruise/Longtail Boat", description: "Explore the city's waterways and observe local life." },
     ],
+     popularEateries: [
+        { name: "Jay Fai", description: "Michelin-starred street food stall famous for its crab omelette (expect long queues).", type: "Street Food / Restaurant"},
+        { name: "Thipsamai Pad Thai", description: "Legendary spot often cited as serving one of Bangkok's best Pad Thai.", type: "Restaurant"},
+        { name: "Gaggan Anand", description: "Innovative fine dining restaurant offering progressive Indian cuisine (reservations essential).", type: "Restaurant"},
+        { name: "Nahm", description: "Upscale restaurant serving refined, traditional Thai cuisine.", type: "Restaurant"},
+        { name: "Or Tor Kor Market", description: "Clean, high-end food market with excellent produce and ready-to-eat meals.", type: "Market / Food Court"},
+    ],
     articleIdeas: [
       "Bangkok Temple Hopping: A Guide to the Must-See Wats",
       "Street Food Adventures in Bangkok: What and Where to Eat",
@@ -457,6 +569,13 @@ Its prosperity declined in the 18th and early 19th centuries but revived later. 
       { name: "Canal Ring (Grachtengordel)", description: "Historic canals lined with gabled houses (UNESCO site); explore by boat or foot." },
       { name: "Jordaan District", description: "Charming neighborhood with narrow streets, galleries, and cozy pubs." },
     ],
+     popularEateries: [
+        { name: "Foodhallen", description: "Indoor food market with various stalls offering diverse cuisines and drinks.", type: "Food Hall / Street Food"},
+        { name: "Van Wonderen Stroopwafels", description: "Popular spot for fresh, warm stroopwafels with various toppings.", type: "Bakery / Street Food"},
+        { name: "Winkel 43", description: "Famous cafe in the Jordaan known for its Dutch apple pie.", type: "Cafe"},
+        { name: "Moeders", description: "Quirky restaurant serving traditional Dutch food in a homely atmosphere decorated with photos of mothers.", type: "Restaurant"},
+        { name: "The Pancake Bakery", description: "Located in a historic canal house, offering a huge variety of sweet and savory Dutch pancakes.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Exploring Amsterdam by Canal Cruise: Routes and Tips",
       "Museum Hopping in Amsterdam: Rijksmuseum, Van Gogh, and More",
@@ -483,6 +602,13 @@ Facing finite oil reserves, Dubai focused on diversifying its economy towards to
       { name: "Palm Jumeirah", description: "Iconic man-made island shaped like a palm tree, home to luxury hotels." },
       { name: "Dubai Fountain", description: "Spectacular water and light show at the base of the Burj Khalifa." },
       { name: "Old Dubai (Al Fahidi/Bastakiya)", description: "Historic neighborhood with traditional windtower houses, souks (gold, spice)." },
+    ],
+    popularEateries: [
+        { name: "Pierchic", description: "Romantic seafood restaurant located on a pier overlooking the Arabian Gulf.", type: "Restaurant"},
+        { name: "Al Ustad Special Kabab", description: "Long-standing, popular Iranian eatery known for its delicious kebabs.", type: "Restaurant"},
+        { name: "Ravi Restaurant", description: "Affordable and authentic Pakistani restaurant, a local favorite.", type: "Restaurant"},
+        { name: "Zuma", description: "Trendy, high-end Japanese restaurant and bar.", type: "Restaurant / Bar"},
+        { name: "Arabian Tea House Cafe", description: "Charming cafe in the Al Fahidi historic district offering traditional Emirati cuisine and drinks.", type: "Cafe / Restaurant"},
     ],
     articleIdeas: [
       "Luxury Experiences in Dubai: Hotels, Dining, and Shopping",
@@ -512,6 +638,13 @@ After the dissolution of the Ottoman Empire following World War I, Ankara became
       { name: "Grand Bazaar & Spice Market", description: "Vast, historic covered markets offering a sensory overload." },
       { name: "Bosphorus Cruise", description: "Boat trip along the strait separating Europe and Asia, offering city views." },
     ],
+     popularEateries: [
+        { name: "Çiya Sofrası", description: "Highly regarded restaurant on the Asian side (Kadikoy) known for authentic, regional Turkish cuisine.", type: "Restaurant"},
+        { name: "Balikci Sabahattin", description: "Popular seafood restaurant near the Blue Mosque known for fresh fish.", type: "Restaurant"},
+        { name: "Hafiz Mustafa 1864", description: "Historic confectioner famous for Turkish delight, baklava, and puddings.", type: "Cafe / Patisserie"},
+        { name: "Van Kahvaltı Evi", description: "Popular spot in Cihangir for sprawling, traditional Turkish breakfasts.", type: "Cafe / Restaurant"},
+        { name: "Durumzade", description: "Small eatery known for delicious Adana and Urfa durum (kebab wraps), featured by Anthony Bourdain.", type: "Street Food / Restaurant"},
+    ],
     articleIdeas: [
       "Istanbul's Imperial Legacy: Hagia Sophia, Blue Mosque, Topkapi Palace",
       "Shopping in Istanbul: Navigating the Grand Bazaar and Spice Market",
@@ -539,6 +672,13 @@ Despite economic challenges resulting from the US embargo and the fall of the So
       { name: "El Morro Castle", description: "Historic fortress guarding the entrance to Havana Bay." },
       { name: "Fábrica de Arte Cubano (FAC)", description: "Unique cultural space blending art galleries, music venues, and restaurants." },
       { name: "Classic Car Tour", description: "Ride through the city in a vintage American car." },
+    ],
+    popularEateries: [
+        { name: "La Guarida", description: "Famous paladar (private restaurant) in a crumbling mansion, known for its atmosphere and upscale Cuban cuisine.", type: "Restaurant"},
+        { name: "Doña Eutimia", description: "Popular paladar near Cathedral Square known for traditional Cuban dishes like ropa vieja.", type: "Restaurant"},
+        { name: "El Cocinero", description: "Trendy restaurant located next to Fábrica de Arte Cubano, offering rooftop dining.", type: "Restaurant / Bar"},
+        { name: "Coppelia", description: "Iconic, state-run ice cream parlor, a Havana institution.", type: "Ice Cream Parlor"},
+        { name: "O'Reilly 304", description: "Popular spot known for creative cocktails and seafood tapas.", type: "Bar / Restaurant"},
     ],
     articleIdeas: [
       "Exploring Old Havana: A Walking Tour Guide",
@@ -568,6 +708,13 @@ Venice's power began to decline with the shifting of trade routes towards the At
       { name: "Rialto Bridge (Ponte di Rialto)", description: "Iconic stone bridge spanning the Grand Canal, lined with shops." },
       { name: "Grand Canal Gondola Ride/Vaporetto Trip", description: "Experience the city's main waterway and admire palazzi." },
     ],
+     popularEateries: [
+        { name: "Osteria alle Testiere", description: "Small, highly-regarded seafood restaurant (reservations essential).", type: "Restaurant"},
+        { name: "Cantina Do Mori", description: "Historic bacaro (wine bar) near Rialto Market, known for cicchetti (small snacks) and local wine.", type: "Bar / Cicchetteria"},
+        { name: "Dal Moro's Fresh Pasta To Go", description: "Popular spot for quick, fresh pasta served in takeaway boxes.", type: "Street Food / Takeaway"},
+        { name: "Gelatoteca Suso", description: "Highly-rated gelateria known for creative flavors and quality.", type: "Gelateria"},
+        { name: "Trattoria Al Gatto Nero", description: "Located on Burano island, famous for its seafood risotto.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Getting Lost in Venice: Exploring Hidden Calli and Campi",
       "Venetian Art: Titian, Tintoretto, and the Scuola Grande di San Rocco",
@@ -595,6 +742,13 @@ As the capital of the People's Republic of China, Beijing underwent massive tran
       { name: "Temple of Heaven", description: "Imperial complex where emperors performed annual rites." },
       { name: "Tiananmen Square", description: "Vast public square, site of significant historical events." },
       { name: "Summer Palace", description: "Lavish imperial garden complex with lakes, temples, and pavilions." },
+    ],
+     popularEateries: [
+        { name: "Quanjude Roast Duck Restaurant", description: "Famous, historic chain renowned for its Peking Duck.", type: "Restaurant"},
+        { name: "Da Dong Roast Duck Restaurant", description: "Modern, upscale restaurant also famous for Peking Duck, known for leaner skin.", type: "Restaurant"},
+        { name: "Din Tai Fung", description: "Popular Taiwanese chain known for its exquisite xiaolongbao (soup dumplings).", type: "Restaurant"},
+        { name: "Mr. Shi's Dumplings", description: "Casual eatery popular with expats and locals for a wide variety of dumplings.", type: "Restaurant"},
+        { name: "Ghost Street (Gui Jie)", description: "Street famous for its numerous restaurants, especially hot pot, open late.", type: "Restaurant Area"},
     ],
     articleIdeas: [
       "Exploring the Forbidden City: A Visitor's Guide",
@@ -624,6 +778,13 @@ The city changed hands during the Crusades before falling under Mamluk and then 
       { name: "Church of the Holy Sepulchre", description: "Venerated Christian site believed to encompass Calvary and Jesus's tomb." },
       { name: "Via Dolorosa", description: "Traditional path Jesus walked on the way to his crucifixion." },
     ],
+    popularEateries: [
+        { name: "Machneyuda", description: "Lively, popular restaurant near Mahane Yehuda Market known for modern Israeli cuisine and vibrant atmosphere.", type: "Restaurant"},
+        { name: "Abu Shukri", description: "Legendary hummus spot in the Old City's Muslim Quarter.", type: "Restaurant / Hummusia"},
+        { name: "Azura", description: "Iraqi-Jewish eatery in Mahane Yehuda Market famous for slow-cooked dishes.", type: "Restaurant"},
+        { name: "Marzipan Bakery", description: "Famous bakery known for its incredibly rich and gooey chocolate rugelach.", type: "Bakery"},
+        { name: "The Eucalyptus", description: "Restaurant specializing in biblical cuisine using local herbs and ingredients.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Navigating the Four Quarters of Jerusalem's Old City",
       "A Pilgrim's Guide: Religious Significance for Jews, Christians, and Muslims",
@@ -636,7 +797,7 @@ The city changed hands during the Crusades before falling under Mamluk and then 
     name: "Mexico City, Mexico",
     description: "Vast, high-altitude capital built on Aztec ruins, rich in history and culture.",
     historyTeaser: "Aztec Tenochtitlan to sprawling modern megalopolis.",
-    historyDetails: `Mexico City stands on the ruins of Tenochtitlan, the magnificent capital of the Aztec Empire, founded around 1325 on an island in Lake Texcoco. It was a highly sophisticated city with complex canal systems, temples (like the Templo Mayor), and palaces.
+    historyDetails: `Mexico City stands on the ruins of Tenochtitlan, the magnificent capital of the Aztec Empire, founded around 1325 on an island in Lake Texcoco. It was a highly sophisticated city with complex canal systems, temples (like the Templo Mayor), and palaces, laid out in the shape of a puma.
 In 1521, Spanish conquistadors led by Hernán Cortés conquered Tenochtitlan after a brutal siege, razing much of the city and building their colonial capital on top. Mexico City became the capital of the Viceroyalty of New Spain, a vast territory stretching across much of North and Central America.
 The city grew as a major administrative, religious, and cultural center, blending indigenous and Spanish influences. Mexico gained independence from Spain in 1821, with Mexico City remaining the capital. It witnessed periods of political instability, foreign interventions (including US occupation), and revolution.
 The 20th century saw explosive population growth and urbanization, transforming Mexico City into one of the world's largest metropolitan areas. It hosted the 1968 Summer Olympics. Despite challenges like pollution and earthquakes, it remains the vibrant political, economic, and cultural heart of Mexico, boasting world-class museums, historical sites, and a renowned culinary scene.`,
@@ -651,6 +812,13 @@ The 20th century saw explosive population growth and urbanization, transforming 
       { name: "National Museum of Anthropology", description: "World-renowned museum showcasing Mexico's pre-Hispanic heritage." },
       { name: "Frida Kahlo Museum (Casa Azul)", description: "Former home and studio of the iconic Mexican artist in Coyoacán." },
       { name: "Teotihuacan Pyramids", description: "Impressive ancient city with Pyramids of the Sun and Moon (day trip)." },
+    ],
+     popularEateries: [
+        { name: "Pujol", description: "World-renowned fine dining restaurant offering contemporary Mexican cuisine (reservations essential).", type: "Restaurant"},
+        { name: "Contramar", description: "Popular, bustling seafood restaurant famous for its tuna tostadas and whole grilled fish.", type: "Restaurant"},
+        { name: "El Huequito", description: "Historic taqueria specializing in tacos al pastor.", type: "Taqueria / Street Food"},
+        { name: "Churrería El Moro", description: "Iconic spot serving traditional churros and hot chocolate since 1935.", type: "Cafe / Churreria"},
+        { name: "Mercado de Coyoacán", description: "Market known for its tostada stands and vibrant atmosphere.", type: "Market / Street Food"},
     ],
     articleIdeas: [
       "Exploring Mexico City's Historic Center: Zócalo and Beyond",
@@ -679,6 +847,13 @@ The city transformed into a modern, high-tech metropolis, hosting the 1988 Summe
       { name: "Myeongdong", description: "Bustling shopping district famous for cosmetics, fashion, and street food." },
       { name: "N Seoul Tower", description: "Iconic tower on Namsan Mountain offering panoramic city views." },
     ],
+     popularEateries: [
+        { name: "Tosokchon Samgyetang", description: "Famous restaurant specializing in ginseng chicken soup (samgyetang).", type: "Restaurant"},
+        { name: "Gwangjang Market", description: "Historic market known for its food stalls selling bindaetteok (mung bean pancakes), mayak gimbap, and more.", type: "Market / Street Food"},
+        { name: "Maple Tree House", description: "Popular spot for high-quality Korean BBQ in a modern setting.", type: "Restaurant"},
+        { name: "Osegyehyang", description: "Well-known vegetarian restaurant serving Korean temple-style cuisine in Insadong.", type: "Restaurant"},
+        { name: "Isaac Toast & Coffee", description: "Hugely popular chain serving sweet and savory toasted sandwiches, a breakfast favorite.", type: "Cafe / Street Food"},
+    ],
     articleIdeas: [
       "A Guide to Seoul's Royal Palaces: History and Visiting Tips",
       "K-Pop Pilgrimage: Exploring Gangnam and Entertainment Agencies",
@@ -705,6 +880,13 @@ Marrakech experienced periods of decline but revived in the 20th century, partic
       { name: "Medina & Souks", description: "Labyrinthine old city (UNESCO site) filled with vibrant markets selling crafts, spices, and more." },
       { name: "Jardin Majorelle", description: "Enchanting botanical garden with cobalt blue accents, formerly owned by Yves Saint Laurent." },
       { name: "Bahia Palace", description: "Stunning 19th-century palace showcasing intricate Moroccan craftsmanship." },
+    ],
+    popularEateries: [
+        { name: "Nomad", description: "Trendy rooftop restaurant overlooking the Spice Square, serving modern Moroccan cuisine.", type: "Restaurant"},
+        { name: "Café des Épices", description: "Popular cafe in the medina with rooftop views, great for mint tea and light meals.", type: "Cafe"},
+        { name: "Djemaa el-Fna Food Stalls", description: "Experience authentic street food at the numerous stalls that set up in the main square each evening.", type: "Street Food"},
+        { name: "Le Jardin", description: "Beautiful garden restaurant in the medina offering a tranquil escape and Moroccan dishes.", type: "Restaurant"},
+        { name: "Al Fassia", description: "Well-regarded restaurant run entirely by women, specializing in traditional Moroccan cuisine, particularly tagines.", type: "Restaurant"},
     ],
     articleIdeas: [
       "Getting Lost in the Marrakech Medina: A Guide to the Souks",
@@ -733,6 +915,13 @@ After Shah Jahan moved the capital to Delhi, Agra's importance declined somewhat
       { name: "Mehtab Bagh", description: "Garden complex across the river offering symmetrical views of the Taj Mahal." },
       { name: "Fatehpur Sikri", description: "Abandoned Mughal capital city (UNESCO site), a fascinating day trip." },
     ],
+    popularEateries: [
+        { name: "Peshawri", description: "Upscale restaurant in the ITC Mughal hotel known for North-West Frontier cuisine (tandoori dishes).", type: "Restaurant"},
+        { name: "Dasaprakash", description: "Popular South Indian vegetarian restaurant.", type: "Restaurant"},
+        { name: "Sheroes' Hangout", description: "Cafe run by survivors of acid attacks, serving food and raising awareness.", type: "Cafe"},
+        { name: "Pinch of Spice", description: "Well-regarded restaurant serving North Indian and Mughlai cuisine.", type: "Restaurant"},
+        { name: "Mama Chicken Mama Franky House", description: "Local favorite known for its affordable Mughlai non-vegetarian dishes.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Visiting the Taj Mahal: Best Times, Views, and Tips",
       "Exploring Agra Fort: A Journey Through Mughal History",
@@ -760,6 +949,13 @@ In the 19th century, Prague was a center of Czech National Revival. After World 
       { name: "Astronomical Clock", description: "Medieval clock tower offering an hourly spectacle." },
       { name: "Jewish Quarter (Josefov)", description: "Historic area with synagogues, a cemetery, and the Jewish Museum." },
     ],
+     popularEateries: [
+        { name: "La Degustation Bohême Bourgeoise", description: "Michelin-starred restaurant offering modern interpretations of traditional Czech cuisine.", type: "Restaurant"},
+        { name: "Lokál Dlouhááá", description: "Bustling beer hall serving fresh Pilsner Urquell and classic Czech pub food.", type: "Pub / Restaurant"},
+        { name: "Sisters Bistro", description: "Popular spot for traditional Czech open-faced sandwiches (chlebíčky).", type: "Bistro / Cafe"},
+        { name: "Café Savoy", description: "Grand, historic cafe with elegant decor, serving breakfast, pastries, and Czech dishes.", type: "Cafe / Restaurant"},
+        { name: "U Medvidku", description: "Historic pub and microbrewery serving traditional Czech food and strong beer.", type: "Pub / Restaurant"},
+    ],
     articleIdeas: [
       "A Walking Tour of Prague's Old Town and Charles Bridge",
       "Exploring Prague Castle: Highlights and History",
@@ -786,6 +982,13 @@ This era saw the development of grand boulevards, Beaux-Arts architecture, and t
       { name: "Plaza de Mayo", description: "Historic main square, site of political demonstrations, home to Casa Rosada (presidential palace)." },
       { name: "San Telmo", description: "Historic neighborhood with cobblestone streets, antique markets, and tango parlors." },
       { name: "Teatro Colón", description: "World-renowned opera house known for its stunning architecture and acoustics." },
+    ],
+    popularEateries: [
+        { name: "Don Julio", description: "Highly-rated parrilla (steakhouse) in Palermo known for excellent Argentine beef and wine.", type: "Restaurant"},
+        { name: "El Cuartito", description: "Classic pizzeria famous for its thick-crust Argentine-style pizza.", type: "Pizzeria"},
+        { name: "Café Tortoni", description: "Historic, iconic cafe frequented by artists and writers, known for its atmosphere.", type: "Cafe"},
+        { name: "Choripan", description: "Modern spot specializing in gourmet versions of choripán (chorizo sandwich).", type: "Street Food / Restaurant"},
+        { name: "Gran Dabbang", description: "Innovative restaurant blending Argentine ingredients with Indian flavors.", type: "Restaurant"},
     ],
     articleIdeas: [
       "Finding Tango in Buenos Aires: Shows, Milongas, and Lessons",
@@ -815,6 +1018,13 @@ The city saw political upheaval in the 19th and 20th centuries, including the en
       { name: "Tram 28", description: "Historic tram route winding through picturesque neighborhoods." },
       { name: "São Jorge Castle (Castelo de São Jorge)", description: "Moorish castle offering panoramic city views." },
     ],
+     popularEateries: [
+        { name: "Time Out Market Lisboa", description: "Food hall featuring stalls from top Lisbon chefs and restaurants.", type: "Food Hall / Market"},
+        { name: "Cervejaria Ramiro", description: "Famous, bustling seafood restaurant known for shellfish and beer.", type: "Restaurant"},
+        { name: "Pastéis de Belém", description: "The original home of the iconic Portuguese custard tart (pastel de nata).", type: "Bakery / Cafe"},
+        { name: "A Cevicheria", description: "Popular spot in Principe Real known for creative ceviche dishes (no reservations).", type: "Restaurant"},
+        { name: "Solar dos Presuntos", description: "Well-regarded traditional Portuguese restaurant specializing in seafood.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Riding Tram 28: A Guide to Lisbon's Most Famous Tram",
       "Exploring Alfama: Getting Lost in Lisbon's Oldest Heart",
@@ -841,6 +1051,13 @@ Vienna became the undisputed capital of classical music, home to composers like 
       { name: "St. Stephen's Cathedral", description: "Iconic Gothic cathedral, symbol of Vienna." },
       { name: "Vienna State Opera", description: "World-renowned opera house on the Ringstrasse." },
       { name: "Belvedere Palace", description: "Baroque palace complex housing Austrian art, including Klimt's 'The Kiss'." },
+    ],
+     popularEateries: [
+        { name: "Figlmüller", description: "Famous for its huge, thin Wiener Schnitzel.", type: "Restaurant"},
+        { name: "Café Central", description: "Grand, historic coffee house once frequented by intellectuals and artists.", type: "Cafe"},
+        { name: "Naschmarkt", description: "Vienna's best-known market, offering diverse food stalls, produce, and restaurants.", type: "Market / Restaurant"},
+        { name: "Steirereck im Stadtpark", description: "Michelin-starred fine dining restaurant considered one of Austria's best.", type: "Restaurant"},
+        { name: "Demel", description: "Historic, elegant pastry shop and chocolatier, famous for Sacher Torte and other cakes.", type: "Cafe / Patisserie"},
     ],
     articleIdeas: [
       "Vienna for Music Lovers: Opera, Concerts, and Composers' Homes",
@@ -869,6 +1086,13 @@ Edinburgh was a major center of the Scottish Enlightenment in the 18th century, 
       { name: "Arthur's Seat", description: "Extinct volcano offering panoramic city views (hike)." },
       { name: "Calton Hill", description: "Hilltop with monuments and panoramic views of the city and New Town." },
     ],
+     popularEateries: [
+        { name: "The Witchery by the Castle", description: "Gothic, atmospheric restaurant near the Castle known for fine dining.", type: "Restaurant"},
+        { name: "Oink", description: "Popular spot serving delicious hog roast rolls.", type: "Street Food / Takeaway"},
+        { name: "Dishoom Edinburgh", description: "Branch of the popular Bombay cafe-style Indian restaurant.", type: "Restaurant"},
+        { name: "The Dogs", description: "Restaurant focusing on seasonal Scottish produce in a relaxed setting.", type: "Restaurant"},
+        { name: "Mary's Milk Bar", description: "Artisan gelato shop in the Grassmarket known for unique flavors.", type: "Gelateria"},
+    ],
     articleIdeas: [
       "Walking the Royal Mile: History and Highlights",
       "Exploring Edinburgh's Old Town vs. New Town",
@@ -895,6 +1119,13 @@ Dublin has a rich literary heritage, associated with writers like James Joyce, O
       { name: "Temple Bar District", description: "Cobblestone area known for its lively pubs and traditional music scene." },
       { name: "Kilmainham Gaol", description: "Former prison, now a museum detailing Irish history and rebellion." },
       { name: "St. Patrick's Cathedral", description: "National Cathedral of the Church of Ireland, associated with Jonathan Swift." },
+    ],
+    popularEateries: [
+        { name: "The Winding Stair", description: "Restaurant overlooking the River Liffey, known for its bookshop origins and modern Irish cuisine.", type: "Restaurant"},
+        { name: "Boxty House", description: "Specializes in boxty (traditional Irish potato pancakes) with various fillings.", type: "Restaurant"},
+        { name: "Leo Burdock", description: "Dublin's oldest fish and chip shop, a local institution.", type: "Takeaway / Chippy"},
+        { name: "Gallagher's Boxty House", description: "Another popular spot focused on traditional Irish food, especially boxty.", type: "Restaurant"},
+        { name: "Murphy's Ice Cream", description: "Artisan ice cream shop originating from Dingle, known for unique flavors like sea salt.", type: "Ice Cream Parlor"},
     ],
     articleIdeas: [
       "Dublin Pub Crawl: Experiencing Traditional Irish Pub Culture",
@@ -923,6 +1154,13 @@ The city played a significant role in Spanish history, including the Peninsular 
       { name: "Retiro Park (Parque del Buen Retiro)", description: "Vast urban park with a boating lake, Crystal Palace, and gardens." },
       { name: "Reina Sofía Museum", description: "Home to modern and contemporary Spanish art, including Picasso's 'Guernica'." },
     ],
+     popularEateries: [
+        { name: "Mercado de San Miguel", description: "Gourmet food market near Plaza Mayor offering tapas, drinks, and specialty products.", type: "Market / Food Hall"},
+        { name: "Chocolatería San Ginés", description: "Historic spot famous for chocolate con churros, open nearly 24/7.", type: "Cafe / Churreria"},
+        { name: "Casa Lucio", description: "Traditional Castilian restaurant known for its 'huevos rotos' (broken eggs) and celebrity clientele.", type: "Restaurant"},
+        { name: "Bodega de la Ardosa", description: "Historic tavern known for its vermouth on tap and traditional tapas.", type: "Bar / Tapas"},
+        { name: "Juana La Loca", description: "Popular modern tapas bar in La Latina known for creative pinchos.", type: "Bar / Tapas"},
+    ],
     articleIdeas: [
       "Madrid's Golden Triangle of Art: Prado, Reina Sofía, Thyssen",
       "Tapas Hopping in Madrid: Best Neighborhoods and Dishes",
@@ -949,6 +1187,13 @@ The fall of the Berlin Wall in 1989 and German reunification in 1990 marked a ne
       { name: "Berlin Wall Memorial & East Side Gallery", description: "Remnants and documentation center of the Berlin Wall; longest remaining section painted by artists." },
       { name: "Museum Island (Museumsinsel)", description: "UNESCO site housing five world-renowned museums (e.g., Pergamon, Neues Museum)." },
       { name: "Memorial to the Murdered Jews of Europe", description: "Poignant Holocaust memorial consisting of concrete slabs." },
+    ],
+    popularEateries: [
+        { name: "Mustafas Gemuese Kebap", description: "Legendary street food stall known for its incredibly popular chicken döner kebab (expect long queues).", type: "Street Food"},
+        { name: "Konnopke's Imbiss", description: "Historic snack stand famous for its Currywurst, especially popular in former East Berlin.", type: "Street Food / Imbiss"},
+        { name: "Markthalle Neun", description: "Historic market hall hosting food stalls, street food events, and local producers.", type: "Market / Food Hall"},
+        { name: "Tim Raue", description: "Michelin-starred fine dining restaurant offering Asian-inspired cuisine.", type: "Restaurant"},
+        { name: "Burgermeister", description: "Popular burger joint located in a former public toilet building under the U-Bahn tracks.", type: "Fast Food / Burgers"},
     ],
     articleIdeas: [
       "Understanding Berlin's History: Wall Memorial, Checkpoint Charlie, Topography of Terror",
@@ -978,6 +1223,13 @@ The town endured hardship during the Khmer Rouge regime in the 1970s but has sin
       { name: "Banteay Srei", description: "Exquisitely carved pink sandstone temple dedicated to Shiva." },
       { name: "Tonlé Sap Lake & Floating Villages", description: "Largest freshwater lake in Southeast Asia with unique communities living on water." },
     ],
+    popularEateries: [
+        { name: "Malis Restaurant", description: "Upscale restaurant serving refined Cambodian cuisine in an elegant setting.", type: "Restaurant"},
+        { name: "Cuisine Wat Damnak", description: "Fine dining restaurant offering tasting menus based on traditional Cambodian flavors and local ingredients.", type: "Restaurant"},
+        { name: "Marum", description: "Training restaurant for disadvantaged youth, serving creative tapas-style Cambodian dishes.", type: "Restaurant"},
+        { name: "Haven", description: "Another well-regarded training restaurant supporting vulnerable young adults, offering Asian and Western food.", type: "Restaurant"},
+        { name: "Pub Street Food Stalls", description: "Explore the lively Pub Street area for various street food options and snacks.", type: "Street Food"},
+    ],
     articleIdeas: [
       "Planning Your Angkor Wat Visit: Tickets, Tours, and Temple Circuits",
       "Sunrise and Sunset at Angkor Wat: Best Viewing Spots",
@@ -1005,6 +1257,13 @@ Hanoi became the capital of North Vietnam after the country's division in 1954 a
       { name: "Temple of Literature (Văn Miếu)", description: "Vietnam's first national university, dedicated to Confucius." },
       { name: "Water Puppet Theatre", description: "Unique traditional Vietnamese art form performed on water." },
     ],
+     popularEateries: [
+        { name: "Pho Thin", description: "Famous spot known for its unique style of pho bo (beef noodle soup) with stir-fried garlic.", type: "Restaurant / Street Food"},
+        { name: "Banh Mi 25", description: "Highly popular street food stall known for delicious and affordable banh mi sandwiches.", type: "Street Food"},
+        { name: "Cha Ca Thang Long", description: "Restaurant specializing in cha ca la vong (grilled fish with dill and turmeric).", type: "Restaurant"},
+        { name: "Giang Cafe", description: "Historic cafe, the birthplace of Vietnamese egg coffee (ca phe trung).", type: "Cafe"},
+        { name: "Bun Cha Huong Lien", description: "Made famous after hosting Barack Obama and Anthony Bourdain, serving bun cha (grilled pork with noodles).", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Navigating Hanoi's Old Quarter: A Street Food and Shopping Guide",
       "French Colonial Architecture in Hanoi: A Walking Tour",
@@ -1031,6 +1290,13 @@ The city remained largely isolated until the mid-20th century. It has since grow
       { name: "Pashupatinath Temple", description: "Sacred Hindu temple complex on the Bagmati River, site of open-air cremations (main temple restricted to Hindus)." },
       { name: "Kathmandu Durbar Square", description: "Historic palace square with temples and Kumari Ghar (home of the living goddess) (UNESCO site)." },
       { name: "Thamel District", description: "Backpacker hub with shops, restaurants, and trekking agencies." },
+    ],
+     popularEateries: [
+        { name: "OR2K", description: "Popular vegetarian restaurant in Thamel with Middle Eastern and Nepali dishes and floor seating.", type: "Restaurant"},
+        { name: "Yangling Tibetan Restaurant", description: "Well-regarded spot in Thamel for authentic Tibetan momos (dumplings) and thukpa (noodle soup).", type: "Restaurant"},
+        { name: "Fire and Ice Pizzeria", description: "Long-standing pizzeria popular with tourists and locals.", type: "Restaurant"},
+        { name: "Garden of Dreams Cafe (Kaiser Cafe)", description: "Cafe located within the tranquil Garden of Dreams, offering drinks and light meals.", type: "Cafe"},
+        { name: "Newa Lahana", description: "Authentic Newari restaurant in Kirtipur (short drive from Kathmandu) offering traditional cuisine.", type: "Restaurant"},
     ],
     articleIdeas: [
       "Exploring Kathmandu's UNESCO Durbar Squares: Kathmandu, Patan, Bhaktapur",
@@ -1060,6 +1326,13 @@ Since the dissolution of the Soviet Union in 1991, Moscow has re-emerged as the 
       { name: "Bolshoi Theatre", description: "World-renowned historic theatre for opera and ballet." },
       { name: "Moscow Metro", description: "Elaborate subway system known for its ornate 'underground palaces'." },
     ],
+    popularEateries: [
+        { name: "Café Pushkin", description: "Opulent restaurant recreating a 19th-century Russian nobleman's library, serving classic Russian cuisine.", type: "Restaurant"},
+        { name: "White Rabbit", description: "Fine dining restaurant with panoramic city views, known for modern Russian cuisine.", type: "Restaurant"},
+        { name: "Teremok", description: "Popular Russian fast-food chain specializing in blini (crepes) with various fillings.", type: "Fast Food / Creperie"},
+        { name: "Danilovsky Market", description: "Modern food market with numerous stalls offering diverse international cuisines and local products.", type: "Market / Food Hall"},
+        { name: "Stolovaya 57", description: "Soviet-style canteen located in GUM department store, offering affordable traditional Russian food.", type: "Restaurant / Canteen"},
+    ],
     articleIdeas: [
       "Exploring the Moscow Kremlin: Cathedrals, Armoury, and Diamond Fund",
       "Red Square Highlights: St. Basil's, Lenin's Mausoleum, GUM",
@@ -1087,6 +1360,13 @@ The city witnessed pivotal historical events, including the Decembrist revolt, B
       { name: "Nevsky Prospekt", description: "Main avenue lined with historic buildings, shops, and cafes." },
       { name: "Canal Tours", description: "Explore the city's intricate network of canals and bridges by boat." },
     ],
+     popularEateries: [
+        { name: "Cococo Bistro", description: "Restaurant known for modern interpretations of Russian cuisine using local, seasonal ingredients.", type: "Restaurant"},
+        { name: "Pyshechnaya (1958)", description: "Historic, Soviet-era cafe famous for 'pyshki' (Russian donuts) and coffee.", type: "Cafe / Bakery"},
+        { name: "Tsar", description: "Restaurant offering traditional Russian imperial cuisine in an opulent setting.", type: "Restaurant"},
+        { name: "Koryushka", description: "Restaurant by the Ginza Project group located near Peter and Paul Fortress, known for its views and varied menu (including the namesake smelt fish when in season).", type: "Restaurant"},
+        { name: "Zoom Cafe", description: "Cozy, popular cafe known for its eclectic decor, comfort food, and reasonable prices.", type: "Cafe"},
+    ],
     articleIdeas: [
       "Navigating the Hermitage: Highlights and Tips for a Vast Museum",
       "St. Petersburg's Imperial Palaces: Peterhof, Catherine Palace (Amber Room)",
@@ -1113,6 +1393,13 @@ Under the leadership of Lee Kuan Yew, Singapore underwent remarkable economic tr
       { name: "Singapore Botanic Gardens", description: "UNESCO World Heritage site, home to the National Orchid Garden." },
       { name: "Sentosa Island", description: "Resort island with beaches, theme parks (Universal Studios), and attractions." },
       { name: "Chinatown, Little India, Kampong Glam", description: "Vibrant ethnic enclaves showcasing diverse cultures and cuisines." },
+    ],
+     popularEateries: [
+        { name: "Lau Pa Sat", description: "Historic building housing a popular hawker centre with a wide variety of local dishes.", type: "Hawker Centre / Food Court"},
+        { name: "Maxwell Food Centre", description: "Famous hawker centre known for stalls like Tian Tian Hainanese Chicken Rice.", type: "Hawker Centre / Food Court"},
+        { name: "Burnt Ends", description: "Michelin-starred modern Australian barbecue restaurant (reservations difficult).", type: "Restaurant"},
+        { name: "Jumbo Seafood", description: "Popular chain famous for its Chili Crab and Black Pepper Crab.", type: "Restaurant"},
+        { name: "Ya Kun Kaya Toast", description: "Iconic chain serving traditional Singaporean breakfast of kaya toast, soft-boiled eggs, and coffee.", type: "Cafe"},
     ],
     articleIdeas: [
       "Exploring Gardens by the Bay: Supertrees, Domes, and Light Shows",
@@ -1142,6 +1429,13 @@ The city played a key role in the Spanish Civil War and later re-emerged as a vi
       { name: "Las Ramblas", description: "Famous tree-lined pedestrian boulevard bustling with activity." },
       { name: "Casa Batlló & Casa Milà (La Pedrera)", description: "Gaudí's fantastical residential buildings on Passeig de Gràcia (UNESCO sites)." },
     ],
+    popularEateries: [
+        { name: "Tickets Bar", description: "Innovative tapas bar by Albert Adrià (formerly of El Bulli), known for creative dishes (reservations essential).", type: "Bar / Tapas / Restaurant"},
+        { name: "Ciudad Condal (Ciutat Comtal)", description: "Bustling, popular tapas restaurant with a wide variety of classic dishes.", type: "Bar / Tapas"},
+        { name: "La Boqueria Market", description: "Famous food market off Las Ramblas with tapas bars, fresh produce, and juice stands.", type: "Market / Food Hall"},
+        { name: "Can Paixano (La Xampanyeria)", description: "Crowded, standing-room-only spot famous for cheap cava (sparkling wine) and sausage sandwiches.", type: "Bar / Tapas"},
+        { name: "Disfrutar", description: "Michelin-starred fine dining restaurant offering avant-garde cuisine (run by former El Bulli chefs).", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Gaudí's Barcelona: A Guide to His Architectural Wonders",
       "Exploring the Gothic Quarter and El Born Neighborhoods",
@@ -1153,10 +1447,10 @@ The city played a key role in the Spanish Civil War and later re-emerged as a vi
     slug: "san-francisco",
     name: "San Francisco, USA",
     description: "Iconic city known for the Golden Gate Bridge, cable cars, Alcatraz, and hilly streets.",
-    historyTeaser: "From Spanish mission to Gold Rush boomtown and tech hub.",
-    historyDetails: `The area was originally inhabited by Ohlone Native Americans. The Spanish established a mission (Mission Dolores) and a presidio (military fort) in 1776. The settlement remained small until the California Gold Rush began in 1848.
-The Gold Rush transformed San Francisco almost overnight into a bustling, lawless boomtown as fortune seekers flocked to the region. The city grew rapidly, developing its characteristic hilly street grid and diverse population. It endured the devastating 1906 earthquake and fire, which destroyed much of the city but led to rebuilding and modernization.
-Key landmarks like the Golden Gate Bridge and the Bay Bridge were completed in the 1930s. San Francisco became a center for counterculture movements in the 1950s (Beat Generation) and 1960s (Summer of Love) and a hub for the LGBTQ+ rights movement. In recent decades, its proximity to Silicon Valley has made it a major center of the global technology industry.`,
+    historyTeaser: "Spanish pueblo to Gold Rush boomtown and tech hub.",
+    historyDetails: `The area was originally inhabited by Tongva Native Americans. The Spanish founded El Pueblo de Nuestra Señora la Reina de los Ángeles ('The Town of Our Lady the Queen of the Angels') in 1781. It remained a small pueblo under Spanish and then Mexican rule.
+Los Angeles came under US control after the Mexican-American War (1848). Its growth accelerated with the arrival of railroads in the late 19th century and the discovery of oil. The burgeoning film industry relocated here from the East Coast in the early 20th century, establishing Hollywood and making LA the entertainment capital of the world.
+The city expanded rapidly, fueled by industries like aerospace and driven by the rise of car culture, leading to its characteristic sprawling, decentralized layout. It hosted the Summer Olympics in 1932 and 1984. Today, Los Angeles is a global center for entertainment, media, technology, and international trade, known for its cultural diversity, iconic landmarks, beaches, and distinct lifestyle.`,
     image: "https://picsum.photos/seed/san-francisco-bridge/800/600",
     imageHint: "san francisco golden gate bridge california cityscape bay",
     continent: "North America",
@@ -1168,6 +1462,13 @@ Key landmarks like the Golden Gate Bridge and the Bay Bridge were completed in t
       { name: "Cable Cars", description: "Historic manually operated cable car system offering scenic rides." },
       { name: "Fisherman's Wharf & Pier 39", description: "Bustling waterfront area with seafood restaurants, shops, and sea lions." },
       { name: "Lombard Street", description: "Famous for its eight hairpin turns on a steep hill." },
+    ],
+     popularEateries: [
+        { name: "Tartine Bakery", description: "Hugely popular bakery known for its bread, pastries, and morning buns.", type: "Bakery / Cafe"},
+        { name: "La Taqueria", description: "Highly-rated taqueria in the Mission District, famous for its burritos (often without rice).", type: "Taqueria / Restaurant"},
+        { name: "Swan Oyster Depot", description: "Old-school seafood counter known for fresh oysters, crab, and clam chowder (expect queues).", type: "Restaurant / Seafood Bar"},
+        { name: "State Bird Provisions", description: "Innovative American restaurant serving dishes dim sum-style from carts (reservations notoriously hard).", type: "Restaurant"},
+        { name: "Bi-Rite Creamery", description: "Popular ice cream shop known for unique flavors and using local ingredients.", type: "Ice Cream Parlor"},
     ],
     articleIdeas: [
       "Riding San Francisco's Cable Cars: Routes and History",
@@ -1196,6 +1497,13 @@ Auckland's growth accelerated in the 20th century, attracting migrants from with
       { name: "Auckland War Memorial Museum", description: "Major museum showcasing New Zealand history, Māori culture, and natural history." },
       { name: "Viaduct Harbour", description: "Waterfront precinct with restaurants, bars, and superyachts." },
     ],
+     popularEateries: [
+        { name: "Depot Eatery & Oyster Bar", description: "Popular eatery by chef Al Brown, known for fresh oysters, shared plates, and lively atmosphere.", type: "Restaurant / Bar"},
+        { name: "The Grove", description: "Fine dining restaurant offering sophisticated tasting menus with a focus on New Zealand produce.", type: "Restaurant"},
+        { name: "Giapo", description: "Artisanal ice cream parlour known for its highly creative and extravagant ice cream creations.", type: "Ice Cream Parlor"},
+        { name: "Orphans Kitchen", description: "Restaurant focusing on local, sustainable ingredients with a relaxed neighbourhood vibe.", type: "Restaurant"},
+        { name: "Best Ugly Bagels", description: "Montreal-style bagel bakery serving wood-fired bagels with various toppings.", type: "Bakery / Cafe"},
+    ],
     articleIdeas: [
       "Island Hopping in the Hauraki Gulf: Waiheke, Rangitoto, Tiritiri Matangi",
       "Exploring Auckland's Volcanic Cones: Views and History",
@@ -1222,6 +1530,13 @@ This event spurred the development of tourism infrastructure, including hotels a
       { name: "Matterhorn Glacier Paradise", description: "Highest cable car station in Europe, offering glacier palace and year-round skiing." },
       { name: "Hiking Trails", description: "Extensive network of trails with varying difficulty levels and stunning alpine scenery (e.g., 5-Seenweg)." },
       { name: "Zermatt Village", description: "Charming car-free village with traditional chalets, shops, and restaurants." },
+    ],
+    popularEateries: [
+        { name: "Chez Vrony", description: "Famous mountain restaurant on the slopes known for stunning Matterhorn views, traditional food, and stylish ambiance.", type: "Restaurant"},
+        { name: "Findlerhof (Franz & Heidi's)", description: "Charming mountain restaurant accessible by hike, offering great views and Swiss cuisine.", type: "Restaurant"},
+        { name: "Restaurant Whymper-Stube", description: "Classic Zermatt restaurant known for its cheese fondue and raclette.", type: "Restaurant"},
+        { name: "Cervo Puro", description: "Fine dining restaurant in the Cervo Mountain Resort offering modern Alpine cuisine.", type: "Restaurant"},
+        { name: "Fuchs Bakery", description: "Local bakery offering bread, pastries, and snacks - good for a quick bite.", type: "Bakery / Cafe"},
     ],
     articleIdeas: [
       "Best Viewpoints of the Matterhorn in Zermatt",
@@ -1251,6 +1566,13 @@ After the war, tourism began to develop slowly. The opening of the first hotel i
       { name: "Overwater Bungalows", description: "Iconic luxury accommodation offering direct lagoon access." },
       { name: "Coral Gardens", description: "Popular snorkeling spot teeming with colourful fish and coral." },
     ],
+    popularEateries: [
+        { name: "Bloody Mary's", description: "Iconic, casual restaurant with sand floors, known for fresh seafood and celebrity sightings.", type: "Restaurant / Bar"},
+        { name: "La Villa Mahana", description: "Intimate, romantic fine dining restaurant offering French-Polynesian cuisine (reservations essential).", type: "Restaurant"},
+        { name: "Bora Bora Yacht Club", description: "Restaurant and bar with lagoon views, popular for sunset drinks and meals.", type: "Restaurant / Bar"},
+        { name: "St James Bora Bora", description: "Waterfront restaurant offering French and Polynesian dishes with lagoon views.", type: "Restaurant"},
+        { name: "Snack Matira", description: "Casual beachside eatery on Matira Beach offering simple local dishes and snacks.", type: "Snack Bar / Cafe"},
+    ],
     articleIdeas: [
       "Choosing Your Bora Bora Resort: Overwater Bungalow Guide",
       "Best Things to Do in Bora Bora: Lagoon Tours, Snorkeling, Diving",
@@ -1278,6 +1600,13 @@ The city grew rapidly in the 20th century, fueled by fishing and later, diversif
       { name: "Blue Lagoon", description: "Famous geothermal spa located near the airport (requires booking)." },
       { name: "Golden Circle Route (Day Trip)", description: "Popular tourist route including Thingvellir National Park, Geysir geothermal area, and Gullfoss waterfall." },
     ],
+     popularEateries: [
+        { name: "Bæjarins Beztu Pylsur", description: "Legendary hot dog stand, famously visited by Bill Clinton, a must-try Reykjavik experience.", type: "Street Food / Hot Dog Stand"},
+        { name: "Fish Market (Fiskmarkaðurinn)", description: "Upscale restaurant serving creative Icelandic seafood dishes with Asian influences.", type: "Restaurant"},
+        { name: "Svarta Kaffið", description: "Cozy spot famous for serving soup (meat or veggie) in a bread bowl.", type: "Restaurant / Cafe"},
+        { name: "Grillmarket (Grillmarkaðurinn)", description: "Restaurant focusing on Icelandic ingredients cooked over charcoal grills.", type: "Restaurant"},
+        { name: "Brauð & Co", description: "Popular bakery known for its amazing cinnamon buns and sourdough bread.", type: "Bakery"},
+    ],
     articleIdeas: [
       "Exploring Reykjavik: Top Sights and Activities",
       "Driving Iceland's Golden Circle: A Self-Drive Guide",
@@ -1290,9 +1619,8 @@ The city grew rapidly in the 20th century, fueled by fishing and later, diversif
     name: "Budapest, Hungary",
     description: "Hungarian capital split by the Danube, known for thermal baths, Parliament Building, and ruin bars.",
     historyTeaser: "Roman Aquincum, unification of Buda, Óbuda, and Pest.",
-    historyDetails: `The area was originally settled by Celts and later became the Roman town of Aquincum. Magyars arrived in the 9th century. Three separate towns developed: Buda (hilly side with the castle), Óbuda (Old Buda), and Pest (flat side, commercial center). Buda became the royal capital of Hungary in the Middle Ages.
-The towns suffered during the Ottoman occupation (16th-17th centuries) and were later rebuilt under Habsburg rule. A golden age occurred in the late 19th century after the Austro-Hungarian Compromise of 1867. The three cities officially united as Budapest in 1873, becoming the co-capital of the Austro-Hungarian Empire.
-This era saw the construction of magnificent landmarks like the Parliament Building, Andrássy Avenue, Heroes' Square, and the expansion of thermal baths. Budapest endured significant damage in World War II and hardship under Communist rule (including the 1956 Uprising). Since the fall of Communism, the city has revitalized, becoming famous for its stunning architecture, thermal spa culture, unique ruin bars, and scenic setting on the Danube River.`,
+    historyDetails: `Budapest's origins trace to the mid-18th century as a trading post near the Chicago River. Incorporated as a city in 1837, its strategic location connecting the Great Lakes and Mississippi River system fueled rapid growth as a transportation hub. The arrival of railroads cemented its status.
+The Great Chicago Fire of 1871 destroyed much of the city but spurred a massive rebuilding effort, leading to pioneering advancements in architecture, including the development of the first skyscrapers. Chicago became a major industrial and financial center, attracting waves of immigrants. It's known for its blues and jazz music heritage, influential architecture (Frank Lloyd Wright, Mies van der Rohe), world-class museums, and passionate sports culture.`,
     image: "https://picsum.photos/seed/budapest-parliament/800/600",
     imageHint: "budapest hungary parliament building danube river chain bridge fisherman bastion",
     continent: "Europe",
@@ -1304,6 +1632,13 @@ This era saw the construction of magnificent landmarks like the Parliament Build
       { name: "Széchenyi Thermal Bath", description: "One of Europe's largest medicinal baths, famous for its outdoor pools." },
       { name: "Chain Bridge", description: "Iconic suspension bridge connecting Buda and Pest." },
       { name: "Great Market Hall", description: "Vibrant indoor market offering food and souvenirs." },
+    ],
+    popularEateries: [
+        { name: "New York Café", description: "Often called the 'most beautiful cafe in the world,' known for its opulent decor and cakes.", type: "Cafe"},
+        { name: "Karcsma Csarda", description: "Traditional Hungarian restaurant with rustic decor and live folk music.", type: "Restaurant"},
+        { name: "Street Food Karaván", description: "Courtyard food truck park next to Szimpla Kert offering various street food options.", type: "Street Food / Food Court"},
+        { name: "Ruszwurm Cukrászda", description: "One of Budapest's oldest pastry shops, located near Buda Castle.", type: "Cafe / Patisserie"},
+        { name: "Mazel Tov", description: "Popular ruin bar/restaurant in the Jewish Quarter with a leafy courtyard and Middle Eastern food.", type: "Restaurant / Bar"},
     ],
     articleIdeas: [
       "Exploring Buda Castle Hill: History, Views, and Attractions",
@@ -1331,6 +1666,13 @@ Cusco remained an important administrative and religious center during the colon
       { name: "Sacsayhuamán", description: "Massive Inca fortress complex with impressive zigzag stone walls overlooking the city." },
       { name: "San Blas Neighborhood", description: "Artisan quarter with steep, narrow streets and workshops." },
       { name: "Sacred Valley (nearby)", description: "Valley housing numerous Inca ruins (Pisac, Ollantaytambo) and traditional villages." },
+    ],
+     popularEateries: [
+        { name: "Chicha por Gastón Acurio", description: "Restaurant by renowned Peruvian chef Gastón Acurio, offering regional Andean cuisine.", type: "Restaurant"},
+        { name: "Pachapapa", description: "Popular restaurant in San Blas known for its traditional Andean dishes, including cuy (guinea pig), cooked in a clay oven.", type: "Restaurant"},
+        { name: "San Pedro Market", description: "Bustling local market with food stalls selling traditional soups, juices, and snacks.", type: "Market / Street Food"},
+        { name: "Cicciolina", description: "Stylish tapas bar and restaurant near Plaza de Armas.", type: "Restaurant / Bar / Tapas"},
+        { name: "Limbus Resto Bar", description: "Bar and restaurant known for its spectacular panoramic views over Cusco.", type: "Restaurant / Bar"},
     ],
     articleIdeas: [
       "Exploring Cusco's Historic Center: Plaza de Armas and San Blas",
@@ -1360,6 +1702,13 @@ In recent decades, Chiang Mai has become a major tourist destination and a popul
       { name: "Night Bazaar & Weekend Markets", description: "Vibrant markets selling handicrafts, clothing, and food." },
       { name: "Cooking Classes", description: "Learn to prepare delicious northern Thai cuisine." },
     ],
+     popularEateries: [
+        { name: "Khao Soi Khun Yai", description: "Popular local spot famous for its delicious Khao Soi (Northern Thai curry noodle soup).", type: "Restaurant / Street Food"},
+        { name: "Dash! Restaurant and Bar", description: "Well-regarded restaurant in the Old City serving Thai and international food in a traditional house setting.", type: "Restaurant / Bar"},
+        { name: "SP Chicken", description: "Simple eatery renowned for its succulent gai yang (grilled chicken).", type: "Restaurant"},
+        { name: "Akha Ama Coffee", description: "Social enterprise cafe serving coffee grown by the local Akha hill tribe.", type: "Cafe"},
+        { name: "Warorot Market (Kad Luang)", description: "Large local market with food stalls offering Northern Thai snacks and dishes.", type: "Market / Street Food"},
+    ],
     articleIdeas: [
       "Temple Hopping in Chiang Mai's Old City",
       "Ethical Elephant Experiences near Chiang Mai",
@@ -1388,6 +1737,13 @@ Today, Ho Chi Minh City is Vietnam's largest city and economic powerhouse, a dyn
       { name: "Ben Thanh Market", description: "Bustling central market offering food, clothing, and souvenirs." },
       { name: "Cu Chi Tunnels (Day Trip)", description: "Extensive network of underground tunnels used during the Vietnam War." },
     ],
+     popularEateries: [
+        { name: "Pho Hoa Pasteur", description: "Long-standing pho restaurant considered one of the city's best.", type: "Restaurant / Street Food"},
+        { name: "Banh Mi Huynh Hoa", description: "Extremely popular banh mi stall known for its generously filled sandwiches.", type: "Street Food"},
+        { name: "Cuc Gach Quan", description: "Charming restaurant set in a restored house, serving traditional Vietnamese home cooking.", type: "Restaurant"},
+        { name: "Secret Garden Restaurant", description: "Rooftop restaurant offering Vietnamese food in a hidden garden setting.", type: "Restaurant"},
+        { name: "The Lunch Lady (Nguyen Thi Thanh)", description: "Famous street food vendor serving a different noodle soup each day (popularized by Anthony Bourdain).", type: "Street Food"},
+    ],
     articleIdeas: [
       "Understanding the Vietnam War: Key Sites in Ho Chi Minh City",
       "Exploring French Colonial Architecture in HCMC",
@@ -1414,6 +1770,13 @@ Although the trade monopoly later shifted, Seville remained the cultural and art
       { name: "Plaza de España", description: "Grand semi-circular plaza built for the 1929 Ibero-American Exposition." },
       { name: "Santa Cruz Neighborhood (Barrio Santa Cruz)", description: "Former Jewish quarter, charming labyrinth of narrow streets and plazas." },
       { name: "Metropol Parasol (Las Setas)", description: "Modern wooden structure offering city views and housing Roman ruins." },
+    ],
+     popularEateries: [
+        { name: "El Rinconcillo", description: "Seville's oldest tapas bar (founded 1670), known for its traditional atmosphere and classic tapas.", type: "Bar / Tapas"},
+        { name: "Eslava", description: "Highly popular, innovative tapas restaurant offering creative dishes (expect queues).", type: "Bar / Tapas / Restaurant"},
+        { name: "Bodeguita Romero", description: "Traditional bar famous for its 'pringá' sandwich (slow-cooked meats).", type: "Bar / Tapas"},
+        { name: "La Brunilda Tapas", description: "Modern tapas bar known for quality ingredients and well-executed dishes.", type: "Bar / Tapas"},
+        { name: "Confitería La Campana", description: "Historic pastry shop selling traditional Spanish sweets and pastries.", type: "Cafe / Patisserie"},
     ],
     articleIdeas: [
       "Exploring the Alcázar: A Guide to Seville's Royal Palace",
@@ -1442,6 +1805,13 @@ In the 19th and 20th centuries, Copenhagen expanded and modernized. It became kn
       { name: "Rosenborg Castle", description: "Renaissance castle housing the Danish Crown Jewels and royal collections." },
       { name: "Strøget", description: "One of Europe's longest pedestrian shopping streets." },
     ],
+    popularEateries: [
+        { name: "Noma", description: "World-renowned, highly influential restaurant known for its innovative New Nordic cuisine (extremely hard to book).", type: "Restaurant"},
+        { name: "Hija de Sanchez", description: "Authentic taqueria run by a former Noma pastry chef.", type: "Taqueria / Street Food"},
+        { name: "TorvehallerneKBH", description: "Upscale food market with stalls offering fresh produce, gourmet products, and ready-to-eat meals.", type: "Market / Food Hall"},
+        { name: "Restaurant Schønnemann", description: "Historic restaurant specializing in traditional Danish smørrebrød (open-faced sandwiches).", type: "Restaurant"},
+        { name: "La Glace", description: "Copenhagen's oldest confectionery, famous for its elaborate cakes and pastries.", type: "Cafe / Patisserie"},
+    ],
     articleIdeas: [
       "Cycling in Copenhagen: Rentals, Routes, and Etiquette",
       "Experiencing Hygge: Cozy Cafes and Activities in Copenhagen",
@@ -1468,6 +1838,13 @@ After the Communist victory in 1949, foreign influence ended, and the city's cap
       { name: "Yu Garden (Yuyuan Garden)", description: "Classical Chinese garden in the Old City with pavilions, ponds, and rockeries." },
       { name: "French Concession", description: "Charming tree-lined neighborhood with European-style architecture, boutiques, and cafes." },
       { name: "Nanjing Road", description: "Bustling primary shopping street." },
+    ],
+     popularEateries: [
+        { name: "Ultraviolet by Paul Pairet", description: "Highly exclusive, multi-sensory fine dining experience (booking via lottery).", type: "Restaurant"},
+        { name: "Jia Jia Tang Bao", description: "Famous spot for delicious Shanghai-style xiaolongbao (soup dumplings).", type: "Restaurant / Street Food"},
+        { name: "Lost Heaven", description: "Popular restaurant serving cuisine from China's Yunnan province in an atmospheric setting.", type: "Restaurant"},
+        { name: "Mr & Mrs Bund - Modern Eatery by Paul Pairet", description: "Upscale restaurant on the Bund offering modern European food with stunning views.", type: "Restaurant"},
+        { name: "Yang's Fry-Dumpling", description: "Popular chain known for shengjianbao (pan-fried soup dumplings).", type: "Restaurant / Street Food"},
     ],
     articleIdeas: [
       "Walking The Bund: Architecture and History",
@@ -1496,6 +1873,13 @@ Florence briefly served as the capital of Italy after unification. While its pol
       { name: "Ponte Vecchio", description: "Historic bridge over the Arno River lined with shops (traditionally jewelers)." },
       { name: "Palazzo Pitti & Boboli Gardens", description: "Vast palace complex housing museums and expansive Italian Renaissance gardens." },
     ],
+    popularEateries: [
+        { name: "All'Antico Vinaio", description: "Extremely popular sandwich shop known for huge, delicious panini.", type: "Sandwich Shop / Street Food"},
+        { name: "Trattoria Mario", description: "Bustling, traditional Florentine trattoria serving classic Tuscan dishes (lunch only, cash only).", type: "Restaurant"},
+        { name: "Osteria Santo Spirito", description: "Popular restaurant in Oltrarno known for its truffle gnocchi.", type: "Restaurant"},
+        { name: "Gelateria dei Neri", description: "Highly-rated gelateria offering a wide range of classic and creative flavors.", type: "Gelateria"},
+        { name: "Mercato Centrale", description: "Upstairs food hall in the central market building offering various Italian and international food stalls.", type: "Market / Food Hall"},
+    ],
     articleIdeas: [
       "Masterpieces of the Uffizi: A Visitor's Guide",
       "Climbing Brunelleschi's Dome: History and Views",
@@ -1522,6 +1906,13 @@ KL experienced rapid development, particularly from the 1990s onwards, transform
       { name: "Merdeka Square (Dataran Merdeka)", description: "Historic square where Malaysian independence was declared, surrounded by colonial buildings." },
       { name: "Thean Hou Temple", description: "Ornate six-tiered Chinese temple dedicated to the Goddess of Mercy." },
       { name: "Jalan Alor Food Street", description: "Famous bustling street known for its diverse array of hawker stalls." },
+    ],
+     popularEateries: [
+        { name: "Lot 10 Hutong", description: "Upscale food court bringing together famous Malaysian heritage street food vendors under one roof.", type: "Food Court"},
+        { name: "Jalan Alor Food Street", description: "Bustling street filled with hawker stalls offering a huge variety of Malaysian and Asian dishes.", type: "Street Food"},
+        { name: "Din Tai Fung (Pavilion KL)", description: "Branch of the popular Taiwanese chain known for excellent xiaolongbao.", type: "Restaurant"},
+        { name: "Bijan Bar & Restaurant", description: "Upscale restaurant serving refined Malay cuisine.", type: "Restaurant"},
+        { name: "VCR Cafe", description: "Popular cafe known for excellent coffee and brunch dishes.", type: "Cafe"},
     ],
     articleIdeas: [
       "Visiting the Petronas Towers: Tickets, Views, and Tips",
@@ -1550,6 +1941,13 @@ Montreal hosted the successful Expo 67 World's Fair and the 1976 Summer Olympics
       { name: "Montreal Museum of Fine Arts", description: "One of Canada's most prominent art museums." },
       { name: "Jean-Talon Market", description: "Large vibrant public market offering local produce and specialty foods." },
     ],
+     popularEateries: [
+        { name: "Schwartz's Deli", description: "Legendary deli famous for its Montreal-style smoked meat sandwiches.", type: "Deli / Restaurant"},
+        { name: "St-Viateur Bagel", description: "Iconic bakery known for its hand-rolled, wood-fired Montreal bagels.", type: "Bakery"},
+        { name: "Au Pied de Cochon", description: "Rich, decadent restaurant known for its over-the-top foie gras dishes and Quebecois cuisine.", type: "Restaurant"},
+        { name: "La Banquise", description: "Famous spot open 24/7 offering a huge variety of poutine.", type: "Restaurant / Poutinerie"},
+        { name: "Joe Beef", description: "Highly acclaimed restaurant known for its hearty, inventive dishes and oysters.", type: "Restaurant"},
+    ],
     articleIdeas: [
       "Exploring Old Montreal: History, Architecture, and Attractions",
       "Montreal Festival Guide: Jazz, Comedy, and More",
@@ -1576,6 +1974,13 @@ The city expanded rapidly, fueled by industries like aerospace and driven by the
       { name: "Santa Monica Pier & Beach", description: "Famous pier with amusement park, aquarium, and beach activities." },
       { name: "Getty Center", description: "Museum complex known for its architecture, gardens, and art collection, offering city views." },
       { name: "Universal Studios Hollywood", description: "Film studio and theme park." },
+    ],
+     popularEateries: [
+        { name: "In-N-Out Burger", description: "Iconic California fast-food chain known for its simple menu and fresh burgers.", type: "Fast Food / Burgers"},
+        { name: "Grand Central Market", description: "Historic downtown market with diverse food vendors offering everything from tacos to oysters.", type: "Market / Food Hall"},
+        { name: "Pink's Hot Dogs", description: "Legendary hot dog stand operating since 1939, known for its variety of toppings.", type: "Hot Dog Stand / Street Food"},
+        { name: "Republique", description: "Popular restaurant and bakery known for its beautiful space, brunch, and pastries.", type: "Restaurant / Bakery / Cafe"},
+        { name: "Bestia", description: "Highly acclaimed Italian restaurant in the Arts District known for its pasta and charcuterie.", type: "Restaurant"},
     ],
     articleIdeas: [
       "Hollywood Behind the Scenes: Studio Tours and Movie Magic",
@@ -1605,6 +2010,13 @@ Swiss explorer Johann Ludwig Burckhardt rediscovered Petra for the West in 1812.
       { name: "Royal Tombs", description: "Impressive series of large tombs carved high into the cliff face." },
       { name: "Street of Facades & Theatre", description: "Area with numerous tomb facades and a Roman-style theatre carved into the rock." },
     ],
+     popularEateries: [
+        { name: "The Basin Restaurant", description: "Buffet-style restaurant located within the Petra archaeological site.", type: "Restaurant"},
+        { name: "My Mom's Recipe Restaurant", description: "Well-rated restaurant in Wadi Musa (the town outside Petra) serving Jordanian home cooking.", type: "Restaurant"},
+        { name: "Al Wadi Restaurant", description: "Popular choice in Wadi Musa offering traditional Jordanian dishes like Mansaf.", type: "Restaurant"},
+        { name: "Petra Kitchen", description: "Offers Jordanian cooking classes followed by dinner.", type: "Restaurant / Cooking School"},
+        { name: "Cave Bar", description: "Unique bar located in a 2000-year-old Nabataean rock tomb near the Petra entrance.", type: "Bar"},
+    ],
     articleIdeas: [
       "Exploring Petra: Walking the Siq to the Treasury and Beyond",
       "Hiking to the Monastery: Views and Effort Required",
@@ -1612,7 +2024,7 @@ Swiss explorer Johann Ludwig Burckhardt rediscovered Petra for the West in 1812.
       "Understanding Nabataean Culture and Engineering at Petra",
     ],
   },
-  // Add more destinations here following the same structure...
+
 ];
 
 // Ensure all slugs are unique
@@ -1623,3 +2035,4 @@ destinations.forEach(dest => {
   }
   slugs.add(dest.slug);
 });
+
