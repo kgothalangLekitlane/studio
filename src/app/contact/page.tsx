@@ -130,7 +130,7 @@ export default function ContactPage() {
                              <Mail className="h-5 w-5 mt-1 text-primary flex-shrink-0"/>
                              <div>
                                 <h3 className="font-semibold">Email</h3>
-                                <a href="mailto:hello@globalwanderer.example" className="text-muted-foreground hover:text-primary transition-colors">hello@globalwanderer.example</a> {/* Updated Email */}
+                                <a href="mailto:lekitlaneisaac0@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">lekitlaneisaac0@gmail.com</a> {/* Updated Email */}
                             </div>
                         </div>
                          {/* Removed Phone Section */}
@@ -138,7 +138,7 @@ export default function ContactPage() {
                              <MapPin className="h-5 w-5 mt-1 text-primary flex-shrink-0"/>
                             <div>
                                 <h3 className="font-semibold">Based In</h3>
-                                <p className="text-muted-foreground">Somewhere exploring the world!<br/>(Primarily online)</p> {/* Updated Address */}
+                                <p className="text-muted-foreground">South Africa<br/>(Exploring the world!)</p> {/* Updated Location */}
                             </div>
                         </div>
                         {/* You can add social media links here if desired */}
@@ -159,7 +159,7 @@ export default function ContactPage() {
                         alt="Stylized World Map"
                         layout="fill"
                         objectFit="cover"
-                        data-ai-hint="world map travel adventure" // Updated hint
+                        data-ai-hint="world map travel adventure south africa" // Updated hint
                     />
                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                         <p className="text-white text-lg font-semibold">[Exploring the Globe]</p> {/* Updated text */}
