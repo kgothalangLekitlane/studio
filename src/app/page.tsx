@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { destinations } from '@/data/destinations'; // Import destinations data
 
 // Select a few destinations to feature
-const featuredDestinations = destinations.slice(0, 3); // Example: Feature the first 3 destinations
+const featuredDestinations = destinations.slice(0, 6); // Example: Feature the first 6 destinations
 
 export default function Home() {
   return (
