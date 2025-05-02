@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'WebFolio - Your Professional Portfolio',
-  description: 'A modern, responsive portfolio website built with Next.js.',
+  title: 'Global Wanderer - Explore the World',
+  description: 'Your guide to the most exciting travel destinations around the globe.',
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
         <Toaster /> {/* Add Toaster component */}
         <footer className="py-4 border-t mt-auto">
           <div className="container text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} WebFolio. All rights reserved.
+            © {new Date().getFullYear()} Global Wanderer. All rights reserved.
           </div>
         </footer>
       </body>

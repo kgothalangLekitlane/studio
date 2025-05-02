@@ -4,7 +4,7 @@
 import type React from 'react';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Home, Info, Mail } from 'lucide-react';
+import { Menu, X, Home, Info, Mail, Globe, Map } from 'lucide-react'; // Added Globe, Map
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -12,6 +12,7 @@ import { usePathname } from 'next/navigation';
 
 const navItems = [
   { href: '/', label: 'Home', icon: Home },
+  { href: '/destinations', label: 'Destinations', icon: Map }, // Changed Portfolio to Destinations
   { href: '/about', label: 'About', icon: Info },
   { href: '/contact', label: 'Contact', icon: Mail },
 ];
@@ -37,7 +38,8 @@ export function Header() {
        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold text-lg text-primary">WebFolio</span>
+             <Globe className="h-6 w-6 text-primary" /> {/* Added Globe icon */}
+            <span className="font-bold text-lg text-primary">Global Wanderer</span> {/* Changed Name */}
           </Link>
           {/* Placeholder for desktop nav */}
           <nav className="hidden md:flex items-center space-x-1">
@@ -73,7 +75,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2" passHref>
-          <span className="font-bold text-lg text-primary cursor-pointer">WebFolio</span>
+          <Globe className="h-6 w-6 text-primary" /> {/* Added Globe icon */}
+          <span className="font-bold text-lg text-primary cursor-pointer">Global Wanderer</span> {/* Changed Name */}
         </Link>
 
         {/* Desktop Navigation */}
@@ -111,7 +114,8 @@ export function Header() {
                 className="flex items-center space-x-2 mb-6 pl-6"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                 <span className="font-bold text-lg text-primary">WebFolio</span>
+                 <Globe className="h-6 w-6 text-primary" /> {/* Added Globe icon */}
+                 <span className="font-bold text-lg text-primary">Global Wanderer</span> {/* Changed Name */}
               </Link>
               <div className="flex flex-col space-y-3">
                 {navItems.map((item) => (
