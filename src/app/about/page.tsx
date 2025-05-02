@@ -47,10 +47,10 @@ export default function AboutPage() {
              className="rounded-full mx-auto mb-6 shadow-md"
              data-ai-hint="traveler portrait happy person"
             />
-            <h3 className="text-2xl font-semibold mb-2">Alex Wanderlust</h3>
+            <h3 className="text-2xl font-semibold mb-2">Isaac Lekitlane</h3>
             <p className="text-muted-foreground mb-4">Founder & Lead Explorer</p>
             <p className="text-lg">
-                Hi, I'm Alex! Ever since my first backpacking trip through Southeast Asia, I've been hooked on exploring new places and experiencing different ways of life. This blog is my way of documenting my journeys and sharing the lessons learned along the way. Join me as we discover the wonders of our planet together!
+                Hi, I'm Isaac! Ever since my first backpacking trip through Southeast Asia, I've been hooked on exploring new places and experiencing different ways of life. This blog is my way of documenting my journeys and sharing the lessons learned along the way. Join me as we discover the wonders of our planet together!
             </p>
          </div>
        </section>
