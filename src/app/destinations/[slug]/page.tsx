@@ -12,7 +12,7 @@ interface DestinationPageProps {
   };
 }
 
-// Pre-render pages for known destinations at build time
+
 export async function generateStaticParams() {
   return destinations.map((dest) => ({
     slug: dest.slug,
