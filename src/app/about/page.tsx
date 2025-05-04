@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Globe, Feather, Camera } from 'lucide-react'; // Changed icons
+import { Globe, Feather, Camera } from 'lucide-react'; // 
 
 export default function AboutPage() {
   return (
