@@ -51,7 +51,7 @@ export default function ContactPage() {
     console.log(values)
     toast({
       title: "Message Sent!",
-      description: "Thanks for reaching out! We'll get back to you as soon as we can.", // Updated toast message
+      description: "Thanks for reaching out! We'll get back to you as soon as we can.", // Updated 
     })
     form.reset(); // Reset form fields after successful submission
   }
