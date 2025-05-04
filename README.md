@@ -110,7 +110,7 @@ export interface ScenicSpot {
 export interface Eatery {
   name: string;
   description: string;
-  type: string; // e.g., "Restaurant", "Cafe", "Street Food"
+  type: string; 
 }
 
 export interface Destination {
@@ -120,13 +120,13 @@ export interface Destination {
   historyTeaser: string;  // Short history hint for cards
   historyDetails: string; // Longer history for detail page
   image: string;          // URL for the main image
-  imageHint: string;      // Keywords for AI image search if needed
+  imageHint: string;      // 
   continent: string;
-  coordinates: string;    // e.g., "48.8566° N, 2.3522° E"
+  coordinates: string;    // 
   population: string;     // e.g., "2.1 million (city)"
   scenicSpots: ScenicSpot[];
   popularEateries: Eatery[];
-  articleIdeas: string[]; // Placeholder titles/ideas for articles
+  articleIdeas: string[]; 
 }
 ```
 
