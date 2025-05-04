@@ -6,21 +6,21 @@ export interface ScenicSpot {
 
 export interface Eatery {
     name: string;
-    description: string; // e.g., "Famous for traditional Parisian bistro fare" or "Trendy spot for modern Japanese cuisine"
-    type: string; // e.g., "Restaurant", "Cafe", "Street Food", "Bakery"
+    description: string; 
+    type: string; 
 }
 
 export interface Destination {
-  slug: string; // Unique identifier for URL
+  slug: string; 
   name: string;
-  description: string; // Short description for card view
-  historyTeaser: string; // Short history hint for card view
-  historyDetails: string; // Longer history for detail page
+  description: string; 
+  historyTeaser: string; 
+  historyDetails: string; 
   image: string;
   imageHint: string;
   continent: string;
-  coordinates: string; // Example: "48.8566° N, 2.3522° E"
-  population: string; // Example: "2.1 million (city)"
+  coordinates: string; 
+  population: string; 
   scenicSpots: ScenicSpot[];
   popularEateries: Eatery[]; // Added field for eateries
   articleIdeas: string[]; // Placeholder titles/ideas for articles
