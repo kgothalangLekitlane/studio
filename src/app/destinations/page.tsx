@@ -1,5 +1,5 @@
 
-"use client"; // Add use client directive for state and interaction
+"use client"; 
 
 import Image from 'next/image';
 import Link from 'next/link';
